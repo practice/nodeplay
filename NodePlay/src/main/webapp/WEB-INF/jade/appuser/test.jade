@@ -1,3 +1,9 @@
 extends /layout/layout
-block content
+- var pageTitle = '테스트'
+block body
   .content hello jade4j 이거 괜찮은데?
+  .span
+    label Name:
+    input(type="text", ng-model="yourName", placeholder="Enter a name here")
+    hr
+    h1 Hello {{yourName}}
