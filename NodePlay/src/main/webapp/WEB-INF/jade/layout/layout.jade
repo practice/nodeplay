@@ -1,9 +1,132 @@
 !!! 5
-html
-  head
-    title= pageName
-  body
-    div 이 내용은 레이아웃 내용이고.
-    block content
-    block footer
-    div 푸터 밑이고.
+html(ng:app={ngApp})
+    head
+        meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}/
+        meta(http-equiv="Pragma" content="no-cache")
+        meta(http-equiv="Cache-Control" content="no-cache")
+        meta(http-equiv="Expires" content="0")
+        script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js")
+        link(href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css")
+        script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js")       
+        script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js")
+        script(src="http://code.angularjs.org/1.0.2/angular-bootstrap.min.js")
+        link(href="/resources/bootstrap2/css/bootstrap.min.css" rel="stylesheet" type="text/css")
+        script(src="/resources/bootstrap2/js/bootstrap.min.js")
+        title=pageTitle
+        script
+            :javascript
+                function dummy() {
+                }
+    body.ng-cloak(ng-controller="BodyCtrl", ng-cloak)
+        .container
+            .navbar
+                .navbar-inner
+                    .row(style="padding-left: 20px")
+                        / img.pull-left(src="/images/logo.gif" style="margin-left: -140px")
+                        a.brand(href={uri("/")}) 법무법인 가온
+                        ul.nav
+                            li.dropdown
+                                li
+                                    a(href={uri("/apt/list")}) 진행 아파트 현황
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown") 입출금관리
+                                ul.dropdown-menu
+                                    li
+                                        a(href={uri("/moneytx/findr")}) 입출금등록
+                                    li
+                                        a(href={uri("/moneytx/search")}) 입출금조회
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown") 경비지출관리
+                                ul.dropdown-menu
+                                    li
+                                        a(href="javascript:goNextPage('E01');") 경비지출등록
+                                    li
+                                        a(href="javascript:goNextPage('E03');") 월별경비지출
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown") 영업관리
+                                ul.dropdown-menu
+                                    li
+                                        a(href="javascript:goNextPage('D01');") 입주예정 아파트
+                                    li
+                                        a(href="javascript:goNextPage('D02');") 협약완료 아파트
+                                    li
+                                        a(href="javascript:goNextPage('D03');") 협약실패 아파트
+                                    li
+                                        a(href="javascript:goNextPage('D04');") 영업업무리포트
+                                    li
+                                        a(href={uri("/salesplan")}) 영업일정
+                            li.dropdown
+                                a.dropdown-toggle(href="#" data-toggle="dropdown") 기초정보관리
+                                ul.dropdown-menu
+                                    li
+                                        a(href={uri("/basic/bank/list")}) 은행계좌정보
+                                    li
+                                        a(href={uri("/basic/bondbank/")}) 채권발행은행
+                                    li
+                                        a(href={uri("/basic/company/list")}) 회사정보
+                                    li
+                                        a(href={uri("/basic/acqpolicy/")}) 취득세정책
+                            li.dropdown(ng-hide="true")
+                                a.dropdown-toggle(href="#" data-toggle="dropdown") Old 버전
+                                ul.dropdown-menu
+                                    li
+                                        a(href="javascript:goNextPage('A01');") 진행 아파트 현황
+                                    li
+                                        a(href="javascript:goNextPage('B01');") 건설사정보
+                                    li
+                                        a(href="javascript:goNextPage('B02');") 시행사정보
+                                    li
+                                        a(href="javascript:goNextPage('B03');") 법무법인정보
+                                    li
+                                        a(href="javascript:goNextPage('B04');") 은행정보
+                                    li
+                                        a(href="javascript:goNextPage('B05');") 연락처정보
+                        ul.nav.pull-right
+                            li.divider-vertical
+                            form.navbar-search(action={uri("/registry/search")})
+                                i.icon-search.icon-white
+                                input.search-query.span1(type="text" name="q" placeholder="계약자검색")
+                                button.hide(type="submit")
+                            li 
+                                a(href="javascript:void(0)") #{loginUser.getMemberName} 님
+                            li 
+                                a(href={uri("/j_spring_security_logout")}) 로그아웃
+        .container
+            block body
+            .row &nbsp;
+            footer#footer
+                p.pull-right 법무법인 가온 &copy;  All rights reserved.
+script
+    :!javascript
+        $(document).ready(function() {
+            // 캘린더 초기화.
+            $('input[type="date"]:not([readonly])').datepicker(
+                { constrainInput: true, 
+                dateFormat: 'yy-mm-dd', 
+                changeYear: true, 
+                changeMonth: true,
+                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], 
+                gotoCurrent: true, 
+                monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
+                monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
+                showButtonPanel: true  });
+            $('input.date:not([readonly])').datepicker(
+                { constrainInput: true, 
+                dateFormat: 'yy-mm-dd', 
+                changeYear: true, 
+                changeMonth: true,
+                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], 
+                gotoCurrent: true, 
+                monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
+                monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
+                showButtonPanel: true  });
+                // .attr("readonly", "readonly");
+            // 탭 파라미터가 있다면 해당 탭을 선택해 준다.
+            $(document).data('tab', '#{parameter("tab")}');
+            jQuery('.tabbable a[href="#tab-' + $(document).data('tab') + '"]').click();
+            // input중에 number인 것들은 right align 한다.
+            jQuery('input[type="number"]').css("text-align", "right");
+            // control label들을 strong으로 만든다.
+            jQuery('.control-group label.control-label').css("font-weight", "bold");
+        });

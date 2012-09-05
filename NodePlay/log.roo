@@ -37,3 +37,9 @@ logging setup --level DEBUG
 // [failed] web mvc scaffold --class ~.node.web.AppUserController --backingType ~.node.model.AppUser
 web mvc scaffold --class ~.node.web.AppUserController --backingType ~.node.model.AppUser
 entity jpa --class ~.node.model.UserAuth --testAutomatically
+hint
+hint topics
+hint security
+hint web mvc
+hint
+security setup

@@ -25,6 +25,7 @@
     </mvc:interceptors>
 
     <!-- Selects a static view for rendering without the need for an explicit controller -->
+    <mvc:view-controller path="/login"/>
     <mvc:view-controller path="/" view-name="index"/>
     <mvc:view-controller path="/uncaughtException"/>
     <mvc:view-controller path="/resourceNotFound"/>
@@ -58,27 +59,25 @@
         </property>
     </bean>
 
-	<bean id="templateLoader" class="de.neuland.jade4j.spring.template.SpringTemplateLoader">
-	    <property name="basePath" value="/WEB-INF/jade/" />
+	<bean class="de.neuland.jade4j.spring.template.SpringTemplateLoader" id="templateLoader">
+	    <property name="basePath" value="/WEB-INF/jade/"/>
 	</bean>
 	
-	<bean id="jadeConfiguration" class="de.neuland.jade4j.JadeConfiguration">
-	    <property name="prettyPrint" value="false" />
-	    <property name="caching" value="false" />
-	    <property name="templateLoader" ref="templateLoader" />
+	<bean class="de.neuland.jade4j.JadeConfiguration" id="jadeConfiguration">
+	    <property name="prettyPrint" value="false"/>
+	    <property name="caching" value="false"/>
+	    <property name="templateLoader" ref="templateLoader"/>
 	</bean>
 	
-	<bean id="viewResolver" class="de.neuland.jade4j.spring.view.JadeViewResolver"
-		p:order="1">
-	    <property name="configuration" ref="jadeConfiguration" />
+	<bean class="de.neuland.jade4j.spring.view.JadeViewResolver" id="viewResolver" p:order="1">
+	    <property name="configuration" ref="jadeConfiguration"/>
 	    <!-- rendering nice html formatted error pages for development -->
-	    <property name="renderExceptions" value="true" />
+	    <property name="renderExceptions" value="true"/>
 	</bean>
 
     <!-- Enable this for integration of file upload functionality -->
     <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"/>
-	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver"
-		p:order="2">
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver" p:order="2">
 	    <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
 	</bean>
     <bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
