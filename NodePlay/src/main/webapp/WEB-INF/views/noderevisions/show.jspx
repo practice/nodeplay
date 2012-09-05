@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_nodeplay_node_model_NodeRevision" object="${noderevision}" path="/noderevisions" z="a7Jmdw4wCuFGzbcgpHBIEGnSiNk=">
+        <field:display field="node" id="s_org_nodeplay_node_model_NodeRevision_node" object="${noderevision}" z="RwCh5O/7t0h8OElR0VsOhl40+xA="/>
+        <field:display field="title" id="s_org_nodeplay_node_model_NodeRevision_title" object="${noderevision}" z="KScUbh4b/HKg6ihSb0MhZwjK0gw="/>
+        <field:display field="body" id="s_org_nodeplay_node_model_NodeRevision_body" object="${noderevision}" z="VDBsmc8upEILQTJ0zHwLct8wSR0="/>
+        <field:display field="user" id="s_org_nodeplay_node_model_NodeRevision_user" object="${noderevision}" z="jEl9NIkkZCDpN460jOMDDJovSSg="/>
+    </page:show>
+</div>

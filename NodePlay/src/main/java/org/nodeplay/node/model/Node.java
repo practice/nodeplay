@@ -3,6 +3,7 @@ package org.nodeplay.node.model;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,6 +21,9 @@ public class Node {
 
 	@ManyToOne
     private AppUser user;
+	
+	@OneToOne
+	private NodeRevision currentRev;
 
     @Column(updatable = false)
     @Temporal(TemporalType.DATE)
@@ -30,6 +34,5 @@ public class Node {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "S-")
     private java.util.Date changed = new Date();
-    
     
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_nodeplay_node_model_Node" object="${node}" path="/nodes" z="oAqnepU4ZO29Mo3cpGTcTMR8LuU=">
+        <field:display field="title" id="s_org_nodeplay_node_model_Node_title" object="${node}" z="mRjwKwFPz7dUmzVOF8zPr8f+DNU="/>
+        <field:display field="user" id="s_org_nodeplay_node_model_Node_user" object="${node}" z="2uVnpAGrdD2W9SLXdG98axYCfXE="/>
+        <field:display field="currentRev" id="s_org_nodeplay_node_model_Node_currentRev" object="${node}" z="FBWHbYg6h2RwBvFQIPHhJWHpjQE="/>
+        <field:display date="true" dateTimePattern="${node_changed_date_format}" field="changed" id="s_org_nodeplay_node_model_Node_changed" object="${node}" z="UUcA61IjSK01cLfVTgd1uuW/E0g="/>
+    </page:show>
+</div>

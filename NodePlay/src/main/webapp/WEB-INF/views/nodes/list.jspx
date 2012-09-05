@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_nodeplay_node_model_Node" items="${nodes}" z="qT9AQ+wBNT/MAbTEYDT7cbeHIG4=">
+        <table:table data="${nodes}" id="l_org_nodeplay_node_model_Node" path="/nodes" z="qybJVtGQnRa73Y6FzyMNffGy2As=">
+            <table:column id="c_org_nodeplay_node_model_Node_title" property="title" z="ZaGAPiQOTANMLWIycXES9jFhM1A="/>
+            <table:column id="c_org_nodeplay_node_model_Node_user" property="user" z="ILGj1pGnn173tvW34TPFYHKo77A="/>
+            <table:column id="c_org_nodeplay_node_model_Node_currentRev" property="currentRev" z="Q9mDkshm9scXbuxSTg7E73glYbI="/>
+            <table:column date="true" dateTimePattern="${node_created_date_format}" id="c_org_nodeplay_node_model_Node_created" property="created" z="b/PtO1G9zXZx7rHJZ6Jin5i1Kjs="/>
+            <table:column date="true" dateTimePattern="${node_changed_date_format}" id="c_org_nodeplay_node_model_Node_changed" property="changed" z="gP3ZXrXYkhhospFMln5JNAHljGE="/>
+        </table:table>
+    </page:list>
+</div>

@@ -6,6 +6,7 @@ package org.nodeplay.node.model;
 import java.util.Date;
 import org.nodeplay.node.model.AppUser;
 import org.nodeplay.node.model.Node;
+import org.nodeplay.node.model.NodeRevision;
 
 privileged aspect Node_Roo_JavaBean {
     
@@ -23,6 +24,14 @@ privileged aspect Node_Roo_JavaBean {
     
     public void Node.setUser(AppUser user) {
         this.user = user;
+    }
+    
+    public NodeRevision Node.getCurrentRev() {
+        return this.currentRev;
+    }
+    
+    public void Node.setCurrentRev(NodeRevision currentRev) {
+        this.currentRev = currentRev;
     }
     
     public Date Node.getCreated() {

@@ -22,3 +22,17 @@ enum type --class ~.node.model.UserStatus
 enum constant --name ACTIVE
 focus --class ~.node.model.AppUser 
 field enum --fieldName status --type ~.node.model.UserStatus
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-09-05 23:38:23
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-09-05 23:41:06
+web mvc scaffold --class ~.node.genController.AppUserController --backingType ~.node.model.AppUser
+web mvc scaffold --class ~.node.genController.AppUserController --backingType ~.node.model.AppUser
+web mvc scaffold --class ~.node.web.AppUserController --backingType ~.node.model.AppUser
+web mvc scaffold --class ~.node.web.AppUserController --backingType ~.node.model.AppUser
+web mvc all --package org.nodeplay.node.web
+hint
+hint logging
+logging setup --level DEBUG 
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-09-06 00:32:58
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-09-06 00:33:11
+// [failed] web mvc scaffold --class ~.node.web.AppUserController --backingType ~.node.model.AppUser
+web mvc scaffold --class ~.node.web.AppUserController --backingType ~.node.model.AppUser

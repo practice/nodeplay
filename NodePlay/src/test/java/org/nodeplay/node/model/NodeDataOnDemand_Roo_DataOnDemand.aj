@@ -16,6 +16,8 @@ import javax.validation.ConstraintViolationException;
 import org.nodeplay.node.model.AppUser;
 import org.nodeplay.node.model.Node;
 import org.nodeplay.node.model.NodeDataOnDemand;
+import org.nodeplay.node.model.NodeRevisionDataOnDemand;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect NodeDataOnDemand_Roo_DataOnDemand {
@@ -25,6 +27,9 @@ privileged aspect NodeDataOnDemand_Roo_DataOnDemand {
     private Random NodeDataOnDemand.rnd = new SecureRandom();
     
     private List<Node> NodeDataOnDemand.data;
+    
+    @Autowired
+    private NodeRevisionDataOnDemand NodeDataOnDemand.nodeRevisionDataOnDemand;
     
     public Node NodeDataOnDemand.getNewTransientNode(int index) {
         Node obj = new Node();

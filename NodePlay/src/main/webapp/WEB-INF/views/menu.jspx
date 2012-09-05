@@ -1,5 +1,19 @@
-<div id="menu" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-	<jsp:directive.page contentType="text/html;charset=UTF-8" />
-	<jsp:output omit-xml-declaration="yes"/>
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_appuser" z="cRddFjEd+tY/sB3uFILzC627HG4=">
+            <menu:item id="i_appuser_new" messageCode="global_menu_new" url="/appusers?form" z="WiHW92wA1LAtLb8e1wUckLwfr5Y="/>
+            <menu:item id="i_appuser_list" messageCode="global_menu_list" url="/appusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="P7xJtmb2eX6uz538bncoLyeRzlM="/>
+        </menu:category>
+        <menu:category id="c_node" z="1BfWzBbme8JY4GYylULnesTcaFI=">
+            <menu:item id="i_node_new" messageCode="global_menu_new" url="/nodes?form" z="tj1P1wqQRAko39Fvin6hdqOR79o="/>
+            <menu:item id="i_node_list" messageCode="global_menu_list" url="/nodes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="AKlbqIMfx8JbSW5mVXqyCUncYdw="/>
+        </menu:category>
+        <menu:category id="c_noderevision" z="zy4UavfCx3aKAJhzwTLj6zAeVRY=">
+            <menu:item id="i_noderevision_new" messageCode="global_menu_new" url="/noderevisions?form" z="ctX7N5aHEHQuso9AgBsRciHHzkU="/>
+            <menu:item id="i_noderevision_list" messageCode="global_menu_list" url="/noderevisions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="KLWfjV6DaQtJIn2+CKT2M4D7n7Y="/>
+        </menu:category>
+    </menu:menu>
 </div>

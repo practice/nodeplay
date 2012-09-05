@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_org_nodeplay_node_model_NodeRevision" modelAttribute="nodeRevision" path="/noderevisions" versionField="Version" z="U6L84cF62VBFUIoppizLzZlhUmA=">
+        <field:select field="node" id="c_org_nodeplay_node_model_NodeRevision_node" itemValue="id" items="${nodes}" path="/nodes" z="PbBa7gxqsfckV0XJec3YbddFJaY="/>
+        <field:input field="title" id="c_org_nodeplay_node_model_NodeRevision_title" z="W+Hlv1sgg1fxsoGe99jrBmxW11A="/>
+        <field:input field="body" id="c_org_nodeplay_node_model_NodeRevision_body" z="X/2fTsaal0jie7/RKRGkuDtBJuc="/>
+        <field:select field="user" id="c_org_nodeplay_node_model_NodeRevision_user" itemValue="id" items="${appusers}" path="/appusers" z="OI6MO3Jyrn3Stsg1dRXKG3CVKfc="/>
+    </form:update>
+</div>

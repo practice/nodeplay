@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_nodeplay_node_model_AppUser" object="${appuser}" path="/appusers" z="gy0q7AlPd1oE7xnYs8H0D2aK3wU=">
+        <field:display field="name" id="s_org_nodeplay_node_model_AppUser_name" object="${appuser}" z="ERkkgxkPg4tOa9a6LWW17NvRavs="/>
+        <field:display field="mail" id="s_org_nodeplay_node_model_AppUser_mail" object="${appuser}" z="ghydtqFAy/E93BhVKuZGRAzAPNU="/>
+        <field:display date="true" dateTimePattern="${appUser_lastaccess_date_format}" field="lastAccess" id="s_org_nodeplay_node_model_AppUser_lastAccess" object="${appuser}" z="KJP3a8O4m5I819byDg2kW4wRNyI="/>
+        <field:display date="true" dateTimePattern="${appUser_lastlogin_date_format}" field="lastLogin" id="s_org_nodeplay_node_model_AppUser_lastLogin" object="${appuser}" z="1tD4QsUo6+jBWq3YM+fEScPXSL4="/>
+        <field:display field="status" id="s_org_nodeplay_node_model_AppUser_status" object="${appuser}" z="cOWxdyJJQR2p1xRober9xoDYEkQ="/>
+    </page:show>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_org_nodeplay_node_model_Node" modelAttribute="node" path="/nodes" render="${empty dependencies}" z="syEs2EbfHQc73RJLtA7mNpabvtU=">
+        <field:input field="title" id="c_org_nodeplay_node_model_Node_title" z="U1nKnzlxBJden/iP0DwIBAhhwFE="/>
+        <field:select field="user" id="c_org_nodeplay_node_model_Node_user" itemValue="id" items="${appusers}" path="/appusers" z="20O6RQjcgJ4b+KRotskZNPcLBoc="/>
+        <field:select field="currentRev" id="c_org_nodeplay_node_model_Node_currentRev" itemValue="id" items="${noderevisions}" path="/noderevisions" z="sK6uXGF0zfj5pNPyy5LzJEN1lR8="/>
+        <field:datetime dateTimePattern="${node_changed_date_format}" field="changed" id="c_org_nodeplay_node_model_Node_changed" z="0LTZUPvm3bDduMnUjOR3vxmjejo="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_org_nodeplay_node_model_Node" render="${not empty dependencies}" z="McZPzziBHntFWQKzoALyPMCxPH8="/>
+</div>
