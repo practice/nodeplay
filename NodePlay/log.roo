@@ -1,0 +1,24 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-08-31 12:28:43
+project --topLevelPackage org.nodeplay --projectName NodePlay --java 6 --packaging WAR
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-08-31 12:28:45
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-08-31 12:28:50
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-08-31 17:03:39
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-08-31 17:07:20
+jpa setup --database MYSQL --provider HIBERNATE --databaseName nodeplay --hostName localhost --userName nodeplay --password nodeplay
+entity jpa --class org.nodeplay.node.model.Node
+test integration --entity ~.node.model.Node
+field date --type java.util.Date --fieldName created --persistenceType JPA_DATE --dateFormat SHORT
+entity jpa --class ~.node.model.NodeRevision --testAutomatically
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-09-05 22:36:14
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-09-05 22:38:39
+hint
+hint topics
+hint general
+hint web mvc
+web mvc setup
+// [failed] entity jpa --class ~.node.model.User
+entity jpa --class ~.node.model.AppUser
+enum type --class ~.node.model.UserStatus
+enum constant --name ACTIVE
+focus --class ~.node.model.AppUser 
+field enum --fieldName status --type ~.node.model.UserStatus
