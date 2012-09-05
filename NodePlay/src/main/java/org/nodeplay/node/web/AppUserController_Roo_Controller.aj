@@ -34,12 +34,6 @@ privileged aspect AppUserController_Roo_Controller {
         return "redirect:/appusers/" + encodeUrlPathSegment(appUser.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(params = "form", produces = "text/html")
-    public String AppUserController.createForm(Model uiModel) {
-        populateEditForm(uiModel, new AppUser());
-        return "appusers/create";
-    }
-    
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String AppUserController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);

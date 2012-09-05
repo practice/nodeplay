@@ -58,19 +58,37 @@
         </property>
     </bean>
 
+	<bean id="templateLoader" class="de.neuland.jade4j.spring.template.SpringTemplateLoader">
+	    <property name="basePath" value="/WEB-INF/jade/" />
+	</bean>
+	
+	<bean id="jadeConfiguration" class="de.neuland.jade4j.JadeConfiguration">
+	    <property name="prettyPrint" value="false" />
+	    <property name="caching" value="false" />
+	    <property name="templateLoader" ref="templateLoader" />
+	</bean>
+	
+	<bean id="viewResolver" class="de.neuland.jade4j.spring.view.JadeViewResolver"
+		p:order="1">
+	    <property name="configuration" ref="jadeConfiguration" />
+	    <!-- rendering nice html formatted error pages for development -->
+	    <property name="renderExceptions" value="true" />
+	</bean>
+
     <!-- Enable this for integration of file upload functionality -->
     <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"/>
-<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver">
-    <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
-  </bean>
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver"
+		p:order="2">
+	    <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+	</bean>
     <bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
-    <property name="definitions">
-      <list>
-        <value>/WEB-INF/layouts/layouts.xml</value>
-        <!-- Scan views directory for Tiles configurations -->
-        <value>/WEB-INF/views/**/views.xml</value>
-      </list>
-    </property>
-  </bean>
-<bean class="org.nodeplay.node.web.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
+	    <property name="definitions">
+	      <list>
+	        <value>/WEB-INF/layouts/layouts.xml</value>
+	        <!-- Scan views directory for Tiles configurations -->
+	        <value>/WEB-INF/views/**/views.xml</value>
+	      </list>
+	    </property>
+	</bean>
+	<bean class="org.nodeplay.node.web.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
 </beans>
