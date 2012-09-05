@@ -17,6 +17,14 @@ privileged aspect AppUser_Roo_JavaBean {
         this.name = name;
     }
     
+    public String AppUser.getDisplayName() {
+        return this.displayName;
+    }
+    
+    public void AppUser.setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+    
     public String AppUser.getMail() {
         return this.mail;
     }

@@ -18,7 +18,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<AppUser, String> ApplicationConversionServiceFactoryBean.getAppUserToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<org.nodeplay.node.model.AppUser, java.lang.String>() {
             public String convert(AppUser appUser) {
-                return new StringBuilder().append(appUser.getName()).append(' ').append(appUser.getMail()).append(' ').append(appUser.getCreated()).append(' ').append(appUser.getLastAccess()).toString();
+                return new StringBuilder().append(appUser.getName()).append(' ').append(appUser.getDisplayName()).append(' ').append(appUser.getMail()).append(' ').append(appUser.getCreated()).toString();
             }
         };
     }

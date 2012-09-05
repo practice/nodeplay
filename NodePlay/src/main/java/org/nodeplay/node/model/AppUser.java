@@ -16,8 +16,11 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class AppUser {
 
-    @Column(length = 64)
+    @Column(length = 32)
     private String name;
+
+    @Column(length = 64)
+    private String displayName;
 
     private String mail;
 

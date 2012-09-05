@@ -8,5 +8,6 @@
         <field:datetime dateTimePattern="${appUser_lastaccess_date_format}" field="lastAccess" id="c_org_nodeplay_node_model_AppUser_lastAccess" z="oe1LjUo5pWpqInah4XKXRuZhwLQ="/>
         <field:datetime dateTimePattern="${appUser_lastlogin_date_format}" field="lastLogin" id="c_org_nodeplay_node_model_AppUser_lastLogin" z="gJY53bG5pTXfGeEAUrtXEBGqySI="/>
         <field:select field="status" id="c_org_nodeplay_node_model_AppUser_status" items="${userstatuses}" path="userstatuses" z="7FJZVWJgK2ded7NOYOBpdRUk0jU="/>
+        <field:input field="displayName" id="c_org_nodeplay_node_model_AppUser_displayName" z="FBxQsHKkXIcTT7tfg/bzJw6w+iU="/>
     </form:update>
 </div>

@@ -8,5 +8,6 @@
         <field:display date="true" dateTimePattern="${appUser_lastaccess_date_format}" field="lastAccess" id="s_org_nodeplay_node_model_AppUser_lastAccess" object="${appuser}" z="KJP3a8O4m5I819byDg2kW4wRNyI="/>
         <field:display date="true" dateTimePattern="${appUser_lastlogin_date_format}" field="lastLogin" id="s_org_nodeplay_node_model_AppUser_lastLogin" object="${appuser}" z="1tD4QsUo6+jBWq3YM+fEScPXSL4="/>
         <field:display field="status" id="s_org_nodeplay_node_model_AppUser_status" object="${appuser}" z="cOWxdyJJQR2p1xRober9xoDYEkQ="/>
+        <field:display field="displayName" id="s_org_nodeplay_node_model_AppUser_displayName" object="${appuser}" z="7JC83Jybwq5IJsi6qgZ5RV1STow="/>
     </page:show>
 </div>
