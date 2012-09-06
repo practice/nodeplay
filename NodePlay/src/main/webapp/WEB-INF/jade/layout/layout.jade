@@ -21,58 +21,51 @@ html(ng-app)
     body.ng-cloak(ng-controller="BodyCtrl", ng-cloak)
         .navbar
             .navbar-inner
-                a.brand(href="/") 법무법인 가온
-                ul.nav
-                    li.dropdown
-                        li
-                            a(href="/apt/list") 진행 아파트 현황
-                    li.dropdown
-                        a.dropdown-toggle(href="#", data-toggle="dropdown") 입출금관리
-                        ul.dropdown-menu
-                            li
-                                a(href="/moneytx/findr") 입출금등록
-                            li
-                                a(href="/moneytx/search") 입출금조회
-                ul.nav.pull-right
-                    li.divider-vertical
-                    form.navbar-search(action="/registry/search")
-                        i.icon-search
-                        input.search-query.span1(type="text", name="q", placeholder="계약자검색")
-                        button.hide(type="submit")
-                    li 
-                        a(href="javascript:void(0)") 누누님. 
-                        // #{loginUser.getMemberName} 님
-                    li 
-                        a(href=f.uri("/resources/j_spring_security_logout")) 로그아웃
+                .container
+                    a.brand(href="/") NodePlay
+                    .nav-collapse.collapse
+                        ul.nav
+                            li.dropdown
+                                li
+                                    a(href="/apt/list") 진행 아파트 현황
+                            li.dropdown
+                                a.dropdown-toggle(href="#", data-toggle="dropdown") 입출금관리
+                                ul.dropdown-menu
+                                    li
+                                        a(href="/moneytx/findr") 입출금등록
+                                    li
+                                        a(href="/moneytx/search") 입출금조회
+                        ul.nav.pull-right
+                            li.divider-vertical
+                            form.navbar-search(action="/registry/search")
+                                i.icon-search
+                                input.search-query.span1(type="text", name="q", placeholder="계약자검색")
+                                button.hide(type="submit")
+                            li 
+                                a(href="javascript:void(0)") 누누님. 
+                                // #{loginUser.getMemberName} 님
+                            li 
+                                a(href=f.uri("/resources/j_spring_security_logout")) 로그아웃
         .container
             block body
             .row &nbsp;
             footer#footer
-                p.pull-right 법무법인 가온 &copy;  All rights reserved.
+                p.pull-right NodePlay
 script
     $(document).ready(function() {
+        var datepickerOption = { constrainInput: true, 
+            dateFormat: 'yy-mm-dd', 
+            changeYear: true, 
+            changeMonth: true,
+            dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], 
+            gotoCurrent: true, 
+            monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
+            monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
+            showButtonPanel: true
+        };
         // 캘린더 초기화.
-        $('input[type="date"]:not([readonly])').datepicker(
-            { constrainInput: true, 
-            dateFormat: 'yy-mm-dd', 
-            changeYear: true, 
-            changeMonth: true,
-            dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], 
-            gotoCurrent: true, 
-            monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
-            monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
-            showButtonPanel: true  });
-        $('input.date:not([readonly])').datepicker(
-            { constrainInput: true, 
-            dateFormat: 'yy-mm-dd', 
-            changeYear: true, 
-            changeMonth: true,
-            dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], 
-            gotoCurrent: true, 
-            monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
-            monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"], 
-            showButtonPanel: true  });
-            // .attr("readonly", "readonly");
+        $('input[type="date"]:not([readonly])').datepicker(datepickerOption);
+        $('input.date:not([readonly])').datepicker(datepickerOption);
         // input중에 number인 것들은 right align 한다.
         jQuery('input[type="number"]').css("text-align", "right");
         // control label들을 strong으로 만든다.
