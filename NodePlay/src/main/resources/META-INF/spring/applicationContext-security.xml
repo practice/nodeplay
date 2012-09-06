@@ -10,7 +10,8 @@
         <logout logout-url="/resources/j_spring_security_logout" />
         <!-- Configure these elements to secure URIs in your application -->
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/member/**" access="isAuthenticated()" />
+        <intercept-url pattern="/node/**" access="isAuthenticated()" />
+        <intercept-url pattern="/user/**" access="isAuthenticated()" />
         <intercept-url pattern="/resources/**" access="permitAll" />
         <intercept-url pattern="/**" access="permitAll" />
     </http>
