@@ -1,9 +1,17 @@
 extends /layout/layout
-- var pageTitle = '테스트'
+- pageTitle = '테스트'
+
 block body
-  .content hello jade4j 이거 괜찮은데?
-  .span
-    label Name:
-    input(type="text", ng-model="yourName", placeholder="Enter a name here")
-    hr
-    h1 Hello {{yourName}}
+    mixin list
+        ul
+            li foo
+            li bar
+            li baz
+    .content hello jade4j 이거 괜찮은데?
+    .span
+        label Name:
+        input(type="text", ng-model="yourName", placeholder="Enter a name here")
+        hr
+        h1 Hello {{yourName}}
+        +list
+        p #{f.uri("/hello")}

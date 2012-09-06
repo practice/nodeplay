@@ -1,3 +1,4 @@
+- pageTitle = "NodePlay"
 !!! 5
 html(ng-app)
     head
@@ -8,42 +9,41 @@ html(ng-app)
         script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
         script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js")
         link(href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css", rel="stylesheet", type="text/css")
-        script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js")       
+        script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js")
         script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js")
         script(src="http://code.angularjs.org/1.0.2/angular-bootstrap.min.js")
-        link(href="/NodePlay/resources/public/bootstrap2/css/bootstrap.min.css", rel="stylesheet", type="text/css")
-        script(src="/NodePlay/resources/public/bootstrap2/js/bootstrap.min.js")
+        link(href=f.uri("/resources/public/bootstrap2/css/bootstrap.min.css"), rel="stylesheet", type="text/css")
+        script(src=f.uri("/resources/public/bootstrap2/js/bootstrap.min.js"))
         title=pageTitle
         script
             function BodyCtrl() {
             }
     body.ng-cloak(ng-controller="BodyCtrl", ng-cloak)
-        .container
-            .navbar
-                .navbar-inner
-                    a.brand(href="/") 법무법인 가온
-                    ul.nav
-                        li.dropdown
+        .navbar
+            .navbar-inner
+                a.brand(href="/") 법무법인 가온
+                ul.nav
+                    li.dropdown
+                        li
+                            a(href="/apt/list") 진행 아파트 현황
+                    li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown") 입출금관리
+                        ul.dropdown-menu
                             li
-                                a(href="/apt/list") 진행 아파트 현황
-                        li.dropdown
-                            a.dropdown-toggle(href="#", data-toggle="dropdown") 입출금관리
-                            ul.dropdown-menu
-                                li
-                                    a(href="/moneytx/findr") 입출금등록
-                                li
-                                    a(href="/moneytx/search") 입출금조회
-                    ul.nav.pull-right
-                        li.divider-vertical
-                        form.navbar-search(action="/registry/search")
-                            i.icon-search.icon-white
-                            input.search-query.span1(type="text", name="q", placeholder="계약자검색")
-                            button.hide(type="submit")
-                        li 
-                            a(href="javascript:void(0)") 누누님. 
-                            // #{loginUser.getMemberName} 님
-                        li 
-                            a(href="/resources/j_spring_security_logout") 로그아웃
+                                a(href="/moneytx/findr") 입출금등록
+                            li
+                                a(href="/moneytx/search") 입출금조회
+                ul.nav.pull-right
+                    li.divider-vertical
+                    form.navbar-search(action="/registry/search")
+                        i.icon-search
+                        input.search-query.span1(type="text", name="q", placeholder="계약자검색")
+                        button.hide(type="submit")
+                    li 
+                        a(href="javascript:void(0)") 누누님. 
+                        // #{loginUser.getMemberName} 님
+                    li 
+                        a(href="/resources/j_spring_security_logout") 로그아웃
         .container
             block body
             .row &nbsp;
