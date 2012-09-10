@@ -25,15 +25,15 @@ public class AppUser {
     private String mail;
 
     @Column(updatable = false)
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "S-")
     private Date created = new Date();
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "S-")
     private Date lastAccess = new Date();
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "S-")
     private Date lastLogin = new Date();
 
